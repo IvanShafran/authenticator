@@ -31,3 +31,12 @@ jobs:
         with:
           name: detekt-report
           path: ./**/detekt.html
+
+      - name: Run Android Lint
+        run: ./gradlew lintDebug
+
+      - name: Upload lint report
+        uses: actions/upload-artifact@v2
+        with:
+          name: lint-report
+          path: ./**/lint-results-debug.html
