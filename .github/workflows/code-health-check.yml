@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Build and check code
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
@@ -22,3 +22,12 @@ jobs:
 
       - name: Build an APK
         run: ./gradlew :app:assembleDebug
+
+      - name: Check code
+        run: ./gradlew detekt
+
+      - name: Upload detekt report
+        uses: actions/upload-artifact@v2
+        with:
+          name: detekt-report
+          path: ./**/detekt.html
