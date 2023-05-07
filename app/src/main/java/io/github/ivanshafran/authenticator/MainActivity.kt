@@ -38,4 +38,3 @@ fun MainScreen() {
 fun Preview() {
     MainScreen()
 }
-
