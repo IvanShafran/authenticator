@@ -18,6 +18,11 @@ task clean(type: Delete) {
 
 allprojects {
     afterEvaluate { project ->
+        detekt {
+            buildUponDefaultConfig = true
+            config = files("$rootDir/tools/config/detekt.yml")
+        }
+
         tasks.named("detekt").configure {
             reports {
                 xml.required.set(false)

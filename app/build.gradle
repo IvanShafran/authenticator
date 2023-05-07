@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:1.19.0"
+    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:1.22.0"
 
     implementation 'androidx.core:core-ktx:1.10.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
